@@ -16,7 +16,7 @@ import argparse
 import re
 import yaml
 
-VERSION = "0.15.1"
+VERSION = "0.17.0"
 SVD2RUST_VERSION = "0.34.0"
 
 CRATE_DOC_FEATURES = {
@@ -83,7 +83,6 @@ cortex-m = "0.7.7"
 cortex-m-rt = {{ version = "0.7.3", optional = true }}
 defmt = {{ version = "0.3.5", optional = true }}
 vcell = "0.1.3"
-const-default = {{ version = "1.0", default-features = false }}
 portable-atomic = {{ version = "1", default-features = false, optional = true }}
 
 [package.metadata.docs.rs]
