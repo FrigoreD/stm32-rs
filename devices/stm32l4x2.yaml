@@ -1,5 +1,28 @@
 _svd: ../svd/stm32l4x2.svd
 
+_add:
+  ADC2:
+    derivedFrom: ADC1
+    baseAddress: "0x50040100"
+
+_modify:
+  # The SVD calls ADC1 ADC.
+  ADC:
+    name: ADC1
+
+ADC1:
+  _modify:
+    _interrupts:
+      ADC1:
+        name: ADC1_2
+
+ADC?:
+  _include:
+    - common_patches/adc/l4.yaml
+    - common_patches/adc/l4_smpr.yaml
+    - common_patches/adc/l4_sqr1.yaml
+    - collect/adc/v3.yaml
+
 MPU:
   _strip:
     - "MPU_"
@@ -28,3 +51,4 @@ _include:
  - ./common_patches/dac/dac_rename_stm32l4xx.yaml
  - ../peripherals/dac/dac_l4xx.yaml
  - ../peripherals/opamp/opamp_l4.yaml
+ - common_patches/adc/l4_adc_common.yaml

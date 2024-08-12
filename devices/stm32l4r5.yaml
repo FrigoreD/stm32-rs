@@ -86,6 +86,12 @@ ADC1:
     _interrupts:
       - ADC3
 
+ADC?:
+  _include:
+    - common_patches/adc/split_awdcr.yaml
+    - common_patches/adc/l4_sqr1.yaml
+    - collect/adc/v3.yaml
+
 SPI?:
   _include:
     - common_patches/16bit.yaml
@@ -202,7 +208,6 @@ FLASH:
 
 
 _include:
-  - common_patches/adc/l4_sqr1.yaml
   - common_patches/nvic/4_prio_bits.yaml
   - ./common_patches/usart/merge_CR2_ADDx_fields.yaml
   - ./common_patches/usart/merge_CR2_ABRMODx_fields.yaml

@@ -41,6 +41,18 @@ ADC1:
       JEXTEN:
         bitWidth: 2
 
+ADC?:
+  _include:
+    - common_patches/adc/l4+.yaml
+    - ../peripherals/adc/adc_v3_l4+.yaml
+    - collect/adc/v3.yaml
+
+ADC_Common:
+  _include:
+    - common_patches/adc/l4+common.yaml
+    - ../peripherals/adc/adc_v3_common.yaml
+    - ../peripherals/adc/adc_v3_common_l4+.yaml
+
 DFSDM1:
   _strip:
     - DFSDM_
@@ -108,8 +120,6 @@ _include:
   - common_patches/dbgmcu/l4_apb_fzr_rename.yaml
   - common_patches/dbgmcu/l4+.yaml
   - ../peripherals/dbg/dbg_l4+.yaml
-  - common_patches/adc/l4+.yaml
-  - ../peripherals/adc/adc_v3_l4+.yaml
   - common_patches/dma/dma2d_l4+.yaml
   - ../peripherals/can/can.yaml
   - collect/can/can.yaml

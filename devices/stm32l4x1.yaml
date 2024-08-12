@@ -50,12 +50,6 @@ _modify:
   ADC:
     name: ADC1
 
-ADC1:
-  _modify:
-    _interrupts:
-      ADC1:
-        name: ADC1_2
-
 _add:
   ADC2:
     derivedFrom: ADC1
@@ -65,6 +59,19 @@ _add:
 _copy:
   TIM3:
     from: TIM2
+
+ADC1:
+  _modify:
+    _interrupts:
+      ADC1:
+        name: ADC1_2
+
+ADC?:
+  _include:
+    - common_patches/adc/l4.yaml
+    - common_patches/adc/l4_smpr.yaml
+    - common_patches/adc/l4_sqr1.yaml
+    - collect/adc/v3.yaml
 
 MPU:
   _strip:
@@ -138,10 +145,7 @@ _include:
  - common_patches/fpu_interrupt.yaml
  - ./common_patches/flash/flash_boot0s.yaml
  - ../peripherals/fw/fw_l0_l4.yaml
- - ./common_patches/adc/l4.yaml
  - ./common_patches/adc/l4_adc_common.yaml
- - ./common_patches/adc/l4_smpr.yaml
- - ./common_patches/adc/l4_sqr1.yaml
  - ./common_patches/spi/rename_dff_tifrfe.yaml
  - ../peripherals/spi/spi_l4.yaml
  - ./common_patches/comp/l4xx_comp_reg_rename.yaml

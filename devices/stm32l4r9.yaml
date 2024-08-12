@@ -27,6 +27,12 @@ _copy:
 _derive:
   TIM4: TIM3
 
+ADC?:
+  _include:
+    - common_patches/adc/split_awdcr.yaml
+    - common_patches/adc/l4_sqr1.yaml
+    - collect/adc/v3.yaml
+
 MPU:
   _strip:
     - "MPU_"
@@ -37,7 +43,6 @@ SPI?:
     - common_patches/spi/dr8.yaml
 
 _include:
-  - common_patches/adc/l4_sqr1.yaml
   - common_patches/nvic/4_prio_bits.yaml
   - ./common_patches/usart/merge_CR2_ADDx_fields.yaml
   - ./common_patches/usart/merge_CR2_ABRMODx_fields.yaml

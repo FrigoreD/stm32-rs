@@ -63,21 +63,6 @@ _modify:
      # without quotes, get less readable value 1073768448
      baseAddress: "0x40006800"
 
-  # The SVD calls ADC1 ADC.
-  ADC:
-    name: ADC1
-
-ADC1:
-  _modify:
-    _interrupts:
-      ADC1:
-        name: ADC1_2
-
-_add:
-  ADC2:
-    derivedFrom: ADC1
-    baseAddress: "0x50040100"
-
 USB:
   _add:
     _interrupts:
@@ -148,9 +133,5 @@ _include:
  - ../../peripherals/usb/usb_with_LPM.yaml
  - ../collect/usb/epxr.yaml
  - flash/flash_boot0s.yaml
- - adc/l4.yaml
- - adc/l4_adc_common.yaml
- - adc/l4_smpr.yaml
- - adc/l4_sqr1.yaml
  - spi/rename_dff_tifrfe.yaml
  - ../../peripherals/spi/spi_l4.yaml
