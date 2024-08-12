@@ -1,12 +1,16 @@
 # ADC v3 with L4+ specific fields
 
 _include:
-  - adc_v3.yaml
-  - adc_v3_common.yaml
   - adc_v3_common_l4+.yaml
 
+ADC*_*:
+  _include:
+    - adc_v3_common.yaml
 
 ADC?:
+  _include:
+    - adc_v3.yaml
+
   CR:
     DEEPPWD:
       NotDeepPowerDown: [ 0, "ADC not in Deep-power down" ]

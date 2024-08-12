@@ -11,6 +11,20 @@ _modify:
 _rebase:
   SPI1: SPI3
 
+ADC?:
+  _include:
+    - common_patches/adc/f3.yaml
+    - ../peripherals/adc/adc_v3_f3.yaml
+    - collect/adc/v3.yaml
+
+ADC1_2:
+  _strip:
+    - ADC1_
+
+ADC*_*:
+  _include:
+    - ../peripherals/adc/adc_v3_common_f3.yaml
+
 RCC:
   CFGR:
     _delete:
@@ -102,10 +116,6 @@ SYSCFG:
       - PAGE5_WP
       - PAGE6_WP
       - PAGE7_WP
-
-ADC1_2:
-  _strip:
-    - ADC1_
 
 HRTIM_Common:
   _modify:
@@ -263,7 +273,6 @@ _include:
  - ./common_patches/usart/merge_CR2_ADDx_fields.yaml
  - ./common_patches/usart/merge_BRR_fields.yaml
  - ./common_patches/spi/rename_dff_tifrfe.yaml
- - ./common_patches/adc/f3.yaml
  - ./common_patches/rcc/f3.yaml
  - ./common_patches/rcc/f3_mco.yaml
  - ./common_patches/rcc/f3_delete_tim8.yaml
@@ -317,8 +326,6 @@ _include:
  - ../peripherals/dac/dac_wavegen.yaml
  - ../peripherals/dac/dac_common_2ch.yaml
  - ../peripherals/dac/dac_dmaudr.yaml
- - ../peripherals/adc/adc_v3_f3.yaml
- - ../peripherals/adc/adc_v3_common_f3.yaml
  - ../peripherals/hrtim/hrtim.yaml
  - common_patches/flash/f3.yaml
  - common_patches/flash/f3_obr_rdptr.yaml

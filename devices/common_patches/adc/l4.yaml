@@ -1,2 +1,3 @@
-_include:
-  - dr_rdata.yaml
+"ADC?":
+  _include:
+    - dr_rdata.yaml

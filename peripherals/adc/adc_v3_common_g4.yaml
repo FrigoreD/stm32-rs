@@ -1,9 +1,9 @@
 # ADC_Common with G4 specific fields
 
-_include:
-  - "adc_v3_common.yaml"
-
 "ADC*_*":
+  _include:
+    - "adc_v3_common.yaml"
+
   CCR:
     VBATSEL:
       Disabled: [0, "V_BAT channel disabled"]

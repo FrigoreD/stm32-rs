@@ -1,7 +1,8 @@
 # ADC_Common with H7 specific fields
 
-_include:
-  - "adc_v3_common.yaml"
+ADC*_*:
+  _include:
+    - "adc_v3_common.yaml"
 
 "ADC*_Common":
   CCR:
