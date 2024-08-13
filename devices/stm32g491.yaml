@@ -8,6 +8,16 @@ _derive:
     _from: TIM1
     baseAddress: 0x40015000
 
+ADC?:
+  _include:
+    - common_patches/adc/g4.yaml
+    - ../peripherals/adc/adc_v3_g4.yaml
+    - collect/adc/v3.yaml
+
+ADC*_*:
+  _include:
+    - ../peripherals/adc/adc_v3_common_g4.yaml
+
 FDCAN2:
   _add:
     _interrupts:
@@ -67,9 +77,6 @@ _include:
  - ./common_patches/exti/g4.yaml
  - ./common_patches/fdcan/fdcan_g4.yaml
  - ../peripherals/exti/exti.yaml
- - common_patches/adc/g4.yaml
- - ../peripherals/adc/adc_v3_g4.yaml
- - ../peripherals/adc/adc_v3_common_g4.yaml
  - common_patches/comp/g4.yaml
  - collect/comp/csr.yaml
  - ../peripherals/iwdg/iwdg_with_WINR.yaml

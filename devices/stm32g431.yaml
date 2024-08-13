@@ -1,5 +1,15 @@
 _svd: ../svd/stm32g431.svd
 
+ADC?:
+  _include:
+    - common_patches/adc/g4.yaml
+    - ../peripherals/adc/adc_v3_g4.yaml
+    - collect/adc/v3.yaml
+
+ADC*_*:
+  _include:
+    - ../peripherals/adc/adc_v3_common_g4.yaml
+
 COMP:
   _strip:
     - "COMP_"
@@ -38,9 +48,6 @@ _include:
  - ./common_patches/exti/g4.yaml
  - ./common_patches/fdcan/fdcan_g4.yaml
  - ../peripherals/exti/exti.yaml
- - common_patches/adc/g4.yaml
- - ../peripherals/adc/adc_v3_g4.yaml
- - ../peripherals/adc/adc_v3_common_g4.yaml
  - common_patches/comp/g4.yaml
  - collect/comp/csr.yaml
  - ../peripherals/iwdg/iwdg_with_WINR.yaml
