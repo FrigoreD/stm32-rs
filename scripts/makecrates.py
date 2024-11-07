@@ -271,7 +271,7 @@ def main(devices_path, yes, families):
             family=ufamily, crate=crate, device=devices[family][0],
             version=VERSION, svd2rust_version=SVD2RUST_VERSION,
             devices=make_device_rows(table, family))
-        lib_rs = SRC_LIB_RS_TPL.format(family=ufamily, mods=mods, crate=crate,
+        lib_rs = SRC_LIB_RS_TPL.format(family=ufamily, mods=mods, crate=(crate + "-staging"),
                                        svd2rust_version=SVD2RUST_VERSION)
         build_rs = BUILD_TPL.format(devices=feature_list)
 
